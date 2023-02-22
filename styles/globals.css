@@ -3,8 +3,25 @@
 @tailwind utilities;
 
 
+
 .gradient {
-  background: radial-gradient(ellipse at center, rgba(147, 112, 219, 1) 0%, rgb(79, 54, 128) 75%);
+  background: hsla(49, 100%, 81%, 1);
 
+  background: radial-gradient(
+    circle,
+    hsla(49, 100%, 81%, 1) 0%,
+    hsla(16, 100%, 76%, 1) 100%
+  );
+
+  background: -moz-radial-gradient(
+    circle,
+    hsla(49, 100%, 81%, 1) 0%,
+    hsla(16, 100%, 76%, 1) 100%
+  );
+
+  background: -webkit-radial-gradient(
+    circle,
+    hsla(49, 100%, 81%, 1) 0%,
+    hsla(16, 100%, 76%, 1) 100%
+  );
 }
-
