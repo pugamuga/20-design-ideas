@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.gradient {
+  background: radial-gradient(ellipse at center, rgba(147, 112, 219, 1) 0%, rgb(79, 54, 128) 75%);
+
+}
+
