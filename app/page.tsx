@@ -11,9 +11,10 @@ export default function Home() {
         ))}
       </div>
       <ThreeScene
-        className="w-full h-screen gradient fixed  select-none top-0 left-0 pointer-events-none "
+        className="w-full h-screen fixed  select-none top-0 left-0 pointer-events-none grayscale"
         style={{ zIndex: -1 }}
       />
+      <div className="fixed w-full h-screen gradient inset-0" style={{zIndex:-2}}></div>
     </main>
   );
 }

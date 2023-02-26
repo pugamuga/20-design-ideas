@@ -1,29 +1,37 @@
 "use client";
-import Link from "next/link";
-import { useState } from "react";
-import { motion as m, AnimatePresence } from "framer-motion";
+import BackButton from "@/components/BackButton";
+import MovingText from "@/components/MovingText";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import { EffectComposer, Bloom } from "@react-three/postprocessing";
+import Neon from "@/components/Neon";
 
 export default function Home(): JSX.Element {
-  const [visible, setVisible] = useState(false);
+ 
 
   return (
     <>
-      <div
-        onMouseEnter={() => setVisible(true)}
-        onMouseLeave={() => setVisible(false)}
-        className="h-12 w-12 fixed flex justify-center top-1 left-1 "
-        style={{ zIndex: 999 }}
-      >
-        <m.div
-          initial={{ y: -100 }}
-          animate={{ y: visible ? 0 : -100 }}
-          exit={{ y: -100 }}
-          className="h-12 w-12 border-black border-[1px] rounded-full pb-[2px] flex justify-center items-center"
-        >
-          <Link href={"/"} className="h-12 w-12 rounded-full flex justify-center items-center hover:text-white hover:bg-black  ">Back</Link>
-        </m.div>
-      </div>
-      {/* designFonts */}
+      <BackButton />
+      <main className="w-full h-screen ">
+        <MovingText place="top">REKT</MovingText>
+        <div className="bg-black h-[80%] w-full">
+          <Canvas>
+            <ambientLight intensity={1} />
+            <OrbitControls />
+           <Neon/>
+            <EffectComposer>
+              <Bloom
+                luminanceThreshold={0}
+                luminanceSmoothing={0.9}
+                height={10}
+                mipmapBlur
+                intensity={1}
+              />
+              {/* <GlowingEdges /> */}
+            </EffectComposer>
+          </Canvas>
+        </div>
+      </main>
     </>
   );
 }

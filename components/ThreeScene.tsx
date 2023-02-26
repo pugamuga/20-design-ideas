@@ -4,6 +4,7 @@ import { OrbitControls } from "@react-three/drei";
 import { Environment } from "@react-three/drei/core";
 import { Canvas } from "@react-three/fiber";
 import { DetailedHTMLProps, HTMLAttributes } from "react";
+import ColorCube from "./ColorCube";
 import GlassCube from "./GlassCube";
 
 export default function ThreeScene(
@@ -21,7 +22,8 @@ export default function ThreeScene(
           <Environment preset="sunset" blur={0.9} />
           <ambientLight intensity={0.5} />
           {/* <OrbitControls /> */}
-          <GlassCube />
+          {/* <GlassCube /> */}
+          <ColorCube/>
         </Canvas>
       </main>
     </>
