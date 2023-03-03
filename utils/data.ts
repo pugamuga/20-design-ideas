@@ -9,4 +9,8 @@ export const data:dataProps[] = [
     link: "/cannon",
     title: "Moving Cannon",
   },
+  {
+    link: "/gsap",
+    title: "gsap animations",
+  },
 ];

@@ -18,18 +18,18 @@ export default function page(): JSX.Element {
           <Environment preset="sunset" />
           <ambientLight intensity={0.3} />
           <directionalLight position={[0, 3, 1]} intensity={2} />
-          <ScrollControls pages={3} damping={0.1}>
-            <Cannon rotation={[0, 0, 0]} scale={1.25} position={[0, -0.6, 0]} />
+          <ScrollControls pages={3} damping={0.1} infinite>
+            <Cannon  rotation={[0, 0, 0]} scale={1.25} position={[0, -0.6, 0]} />
             {/* @ts-ignore */}
             <Scroll html style={{ width: "100%" }}>
-              <section className="absolute top-0 h-[100vh] w-full flex justify-end">
-                <div className="h-[100vh] w-[300px] bg-black/70" />
+              <section className="absolute top-0 h-[100vh] w-full flex justify-end items-center">
+                <div className="h-[50vh] w-[300px] bg-black/70" />
               </section>
-              <section className="absolute top-[100vh] h-[100vh] w-full ">
-                <div className="h-[100vh] w-[300px] bg-black/70" />
+              <section className="absolute top-[100vh] h-[100vh] w-full flex items-center">
+                <div className="h-[50vh] w-[300px] bg-black/70" />
               </section>
-              <section className="absolute top-[200vh] h-[100vh] w-full flex justify-end">
-                <div className="h-[100vh] w-[300px] bg-black/70" />
+              <section className="absolute top-[200vh] h-[100vh] w-full flex justify-end items-center">
+                <div className="h-[50vh] w-[300px] bg-black/70" />
               </section>
             </Scroll>
           </ScrollControls>
