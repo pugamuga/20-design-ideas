@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="w-full h-screen ">
-      <div>
+      <div className="flex flex-col gap-y-10">
         {data.map((item, index) => (
           <Link key={index} href={item.link}>{item.title}</Link>
         ))}

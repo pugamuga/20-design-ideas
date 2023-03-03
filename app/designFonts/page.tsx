@@ -5,6 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import Neon from "@/components/Neon";
+import Egg from "@/components/Egg";
 
 export default function Home(): JSX.Element {
  
@@ -14,11 +15,12 @@ export default function Home(): JSX.Element {
       <BackButton />
       <main className="w-full h-screen ">
         <MovingText place="top">REKT</MovingText>
-        <div className="bg-black h-[80%] w-full">
+        <div className="bg-black/10 h-[80%] w-full">
           <Canvas>
             <ambientLight intensity={1} />
             <OrbitControls />
-           <Neon/>
+           {/* <Neon/> */}
+           <Egg/>
             <EffectComposer>
               <Bloom
                 luminanceThreshold={0}
