@@ -13,4 +13,5 @@ export const data:dataProps[] = [
     link: "/gsap",
     title: "gsap animations",
   },
+ 
 ];

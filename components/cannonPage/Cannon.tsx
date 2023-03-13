@@ -1,5 +1,10 @@
 "use client";
-import { ContactShadows, Sparkles, useGLTF, useScroll } from "@react-three/drei";
+import {
+  ContactShadows,
+  Sparkles,
+  useGLTF,
+  useScroll,
+} from "@react-three/drei";
 import { GroupProps, useFrame } from "@react-three/fiber";
 import { useRef, useEffect, useLayoutEffect } from "react";
 import gsap from "gsap";
@@ -10,15 +15,14 @@ export default function Cannon(props: GroupProps): JSX.Element {
   const tl = useRef<any>(null);
   const scroll = useScroll();
 
-  useEffect(() => {
-    console.log(cannonRef.current);
-  });
-
   useFrame((state, delta) => {
-    tl.current.seek(scroll.offset * tl.current.duration());
+    if (tl.current) {
+      tl.current.seek(scroll.offset * tl.current.duration());
+    }
   });
 
   useEffect(() => {
+   
     tl.current = gsap.timeline({
       defaults: {
         duration: 4,
@@ -39,7 +43,7 @@ export default function Cannon(props: GroupProps): JSX.Element {
   return (
     <>
       <group {...props}>
-        <Sparkles size={6} color={'mediumpurple'} scale={[10,10,10]} />
+        {/* <Sparkles size={6} color={"mediumpurple"} scale={[10, 10, 10]} /> */}
         <primitive
           ref={cannonRef}
           object={cannon.scene}
@@ -47,7 +51,7 @@ export default function Cannon(props: GroupProps): JSX.Element {
           rotation={[0, Math.PI / 2, 0]}
         />
       </group>
-      <ContactShadows position-y={-.6} opacity={.4} blur={2.4}/>
+      <ContactShadows position-y={-0.6} opacity={0.4} blur={2.4} />
     </>
   );
 }
